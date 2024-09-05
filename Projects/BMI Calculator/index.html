@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg{
+            background: #449daf;
+        }
+    </style>
+</head>
+<body class="bg d-flex justify-content-center align-items-center vh-100 vw-100">
+
+<div class="container mt-5 border p-5 rounded rounded-5 bg-white w-50">
+    <h2 class="text-center">BMI Calculator</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form id="bmiForm">
+                <div class="mb-3 form-group row">
+                    <label for="weight" class="col-sm-4 col-form-label">Weight (kg)</label>
+                    <div class="col-sm-8 input-group">
+                        <input type="number" class="form-control" id="weight" placeholder="Enter your weight" required>
+                    </div>
+                </div>
+                <div class="mb-3 form-group row">
+                    <label for="height" class="col-sm-4 col-form-label">Height (m)</label>
+                    <div class="col-sm-8 input-group">
+                        <input type="number" step="0.01" class="form-control" id="height" placeholder="Enter your height" required>
+                    </div>
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="button" class="btn btn-outline-dark" onclick="calculateBMI()">Calculate BMI</button>
+                </div>
+                <div class="mt-3">
+                    <p id="bmiResult" class="text-center"></p>
+                    <p id="bmiAnalysis" class="text-center"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap 5 JS and Popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+<!-- BMI Calculator Script -->
+<script>
+    function calculateBMI() {
+        const weight = parseFloat(document.getElementById('weight').value);
+        const height = parseFloat(document.getElementById('height').value);
+
+        if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+            alert('Please enter valid numbers for weight and height.');
+            return;
+        }
+
+        const bmi = (weight / (height * height)).toFixed(2);
+        document.getElementById('bmiResult').innerText = `Your BMI is: ${bmi}`;
+
+        let analysis = '';
+        if (bmi < 18.5) {
+            analysis = 'You are underweight. Consider consulting a healthcare provider for a proper diet plan.';
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+            analysis = 'You have a normal weight. Maintain a balanced diet and regular exercise.';
+        } else if (bmi >= 25 && bmi < 29.9) {
+            analysis = 'You are overweight. A healthy diet and increased physical activity are recommended.';
+        } else {
+            analysis = 'You are obese. It is advised to consult a healthcare provider for proper management.';
+        }
+
+        document.getElementById('bmiAnalysis').innerText = analysis;
+    }
+</script>
+
+</body>
+</html>
