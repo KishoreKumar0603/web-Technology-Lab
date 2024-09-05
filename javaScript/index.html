@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+</head>
+<body>
+
+    <h2>Hello, World!</h2>
+    <script>
+        document.write('Hello, World!');
+    </script>
+
+    <hr>
+
+    <h2>Alert Box</h2>
+    <script>
+        alert('This is an alert box!');
+    </script>
+
+    <hr>
+
+    <h2>Console Log Message</h2>
+    <script>
+        console.log('This is a message in the console.');
+    </script>
+
+    <hr>
+
+    <h2>Simple Function</h2>
+    <script>
+        function greet() {
+            console.log('Hello, this is a function!');
+        }
+        greet();
+    </script>
+
+    <hr>
+
+    <h2>Add Two Numbers</h2>
+    <script>
+        var num1 = 5;
+        var num2 = 10;
+        var sum = num1 + num2;
+        console.log('Sum:', sum);
+    </script>
+
+    <hr>
+
+    <h2>Concatenate Two Strings</h2>
+    <script>
+        var str1 = 'Hello';
+        var str2 = 'World';
+        var result = str1 + ' ' + str2;
+        console.log('Concatenated String:', result);
+    </script>
+
+    <hr>
+
+    <h2>Check Even or Odd</h2>
+    <script>
+        var number = 7;
+        if (number % 2 === 0) {
+            console.log(number + ' is even.');
+        } else {
+            console.log(number + ' is odd.');
+        }
+    </script>
+
+    <hr>
+
+    <h2>Find Larger Number</h2>
+    <script>
+        var num1 = 15;
+        var num2 = 20;
+        var larger = num1 > num2 ? num1 : num2;
+        console.log('Larger Number:', larger);
+    </script>
+
+    <hr>
+
+    <h2>Print Numbers 1 to 10</h2>
+    <script>
+        for (var i = 1; i <= 10; i++) {
+            console.log(i);
+        }
+    </script>
+
+    <hr>
+
+    <h2>Create and Use an Array</h2>
+    <script>
+        var fruits = ['Apple', 'Banana', 'Mango'];
+        console.log('Fruits:', fruits);
+    </script>
+
+    <hr>
+
+    <h2>Access Array Elements</h2>
+    <script>
+        console.log('First Fruit:', fruits[0]);
+    </script>
+
+    <hr>
+
+    <h2>Modify Array Elements</h2>
+    <script>
+        fruits[1] = 'Orange';
+        console.log('Modified Fruits:', fruits);
+    </script>
+
+    <hr>
+
+    <h2>Create and Use an Object</h2>
+    <script>
+        var person = {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 30
+        };
+        console.log('Person:', person);
+    </script>
+
+    <hr>
+
+    <h2>Access Object Properties</h2>
+    <script>
+        console.log('First Name:', person.firstName);
+    </script>
+
+    <hr>
+
+    <h2>Modify Object Properties</h2>
+    <script>
+        person.age = 35;
+        console.log('Modified Person:', person);
+    </script>
+
+    <hr>
+
+    <h2>Check if a Variable is Undefined</h2>
+    <script>
+        var x;
+        if (typeof x === 'undefined') {
+            console.log('x is undefined');
+        } else {
+            console.log('x is defined');
+        }
+    </script>
+
+    <hr>
+
+    <h2>Countdown Timer</h2>
+    <h2 id="timer"></h2>
+    <script>
+        var timeLeft = 10;
+        var timer = setInterval(function() {
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                document.getElementById('timer').innerHTML = "Time's up!";
+            } else {
+                document.getElementById('timer').innerHTML = timeLeft + ' seconds remaining';
+            }
+            timeLeft -= 1;
+        }, 1000);
+    </script>
+
+    <hr>
+
+    <h2>Change Text of an HTML Element</h2>
+    <p id="text">Original Text</p>
+    <button onclick="changeText()">Change Text</button>
+    <script>
+        function changeText() {
+            document.getElementById('text').innerHTML = 'Text has been changed!';
+        }
+    </script>
+
+    <hr>
+
+    <h2>Basic Form Validation</h2>
+    <form onsubmit="return validateForm()">
+        Name: <input type="text" id="name"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            if (name === '') {
+                alert('Name must be filled out');
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    <hr>
+
+    <h2>Change Style of an HTML Element</h2>
+    <p id="text-style">This text will change color.</p>
+    <button onclick="changeColor()">Change Color</button>
+    <script>
+        function changeColor() {
+            document.getElementById('text-style').style.color = 'blue';
+        }
+    </script>
+
+</body>
+</html>
