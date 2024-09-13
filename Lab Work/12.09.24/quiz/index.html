@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <div class="question-container active" id="question1">
+      <h2>Question 1: What sound does a cat make?</h2>
+      <audio controls>
+        <source src="cat_sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <button class="option" onclick="nextQuestion('question2')">Meow</button>
+      <button class="option" onclick="nextQuestion('question2')">Woof</button>
+    </div>
+
+    <div class="question-container" id="question2">
+      <h2>Question 2: What video is this?</h2>
+      <video controls width="300">
+        <source src="sample_video.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+      <button class="option" onclick="nextQuestion('question3')">A movie</button>
+      <button class="option" onclick="nextQuestion('question3')">A documentary</button>
+    </div>
+
+    <div class="question-container" id="question3">
+      <h2>Question 3: What's the color of the sky in the video?</h2>
+      <button class="option" onclick="endQuiz()">Blue</button>
+      <button class="option" onclick="endQuiz()">Green</button>
+    </div>
+
+    <div class="end-container" id="endQuiz">
+      <h2>Congratulations! You have completed the quiz.</h2>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
