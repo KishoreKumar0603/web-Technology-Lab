@@ -7,24 +7,31 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body{
-        padding:20px;
+      padding:20px;
     }
     img{
-        height: 400px;
-        width: 400px;
-        margin: 10px;
-        transition:all 0.3;
-        padding: 5px;
-        border:1px solid black;
-        border-radius: 20px;
+      height: 400px;
+      width: 400px;
+      margin: 10px;
+      transition:all 0.3;
+      padding: 5px;
+      border:1px solid black;
+      border-radius: 20px;
     }
     img:hover{
-        transform: scale(1.01);
+      transform: scale(1.01);
     }
     .heading{
-        width: 100%;
-        text-align: center;
+      width: 100%;
+      text-align: center;
     }
+    .gallery{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    
   </style>
 </head>
 <body>
@@ -32,14 +39,16 @@
         <h1>Image Gallery</h1>
     </div>
   <div class="gallery">
-    <img src="./img/img-1.jpg" alt="Image 1">
-    <img src="./img/img-2.jpg" alt="Image 2">
-    <img src="./img/img-3.jpg" alt="Image 3">
-    <img src="./img/img-4.jpg" alt="Image 4">
-    <img src="./img/img-5.jpg" alt="Image 5">
-    <img src="./img/img-6.jpg" alt="Image 6">
-    <img src="./img/img-7.jpg" alt="Image 7">
-    <img src="./img/img-8.jpg" alt="Image 8">
+    <div class="ae">
+      <img src="./img/img-1.jpg" alt="Image 1">
+      <img src="./img/img-2.jpg" alt="Image 2">
+      <img src="./img/img-3.jpg" alt="Image 3">
+      <img src="./img/img-4.jpg" alt="Image 4">
+      <img src="./img/img-5.jpg" alt="Image 5">
+      <img src="./img/img-6.jpg" alt="Image 6">
+      <img src="./img/img-7.jpg" alt="Image 7">
+      <img src="./img/img-8.jpg" alt="Image 8">
+    </div>
   </div>
 </body>
 </html>
